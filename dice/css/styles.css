@@ -60,6 +60,18 @@ div.dice8side{
 	margin:5px;
 }
 
+div.dice10side{
+	float:left;
+	width:125px;
+  height: 125px;
+  line-height: 100px;
+	background-image: url(images/12.png);
+	padding:10px;
+	font-size:24px;
+	text-align:center;
+	margin:5px;
+}
+
 div.dice12side{
 	float:left;
 	width:125px;

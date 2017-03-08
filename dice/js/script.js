@@ -14,8 +14,8 @@ function rollDice(){
     var d1 = Math.floor(Math.random() * 4) + 1;
     var d2 = Math.floor(Math.random() * 6) + 1;
     var d3 = Math.floor(Math.random() * 8) + 1;
-    var d4 = Math.floor(Math.random() * 12) + 1;
-    var d5 = Math.floor(Math.random() * 6) + 1;
+    var d4 = Math.floor(Math.random() * 10) + 1;
+    var d5 = Math.floor(Math.random() * 12) + 1;
     var dD1 = Math.floor(Math.random() * 20) + 1;
     var dD2 = Math.floor(Math.random() * 6) + 1;
     var diceTotal = d1 + d2 + d3 + d4 + d5;
