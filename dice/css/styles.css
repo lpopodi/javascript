@@ -1,0 +1,85 @@
+/* Styles for dice game */
+
+body {
+    background-color: #211e1e;
+    color: #fff;
+}
+
+.container {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.player.col-sm-8 {
+    background-color: #9e9e9e;
+    padding: 20px;
+}
+
+.dealer.col-sm-4 {
+    background-color: #423737;
+    padding: 20px;
+}
+
+.row {
+  padding: 20px;
+}
+
+div.dice4side{
+	float:left;
+  width:125px;
+  height: 125px;
+  line-height: 130px;
+  background-image: url(images/4.png);
+	padding:10px;
+	font-size:24px;
+	text-align:center;
+	margin:5px;
+}
+
+div.dice6side{
+	float:left;
+	width:125px;
+  height: 125px;
+  line-height: 100px;
+	background-image: url(images/6.png);
+	padding:10px;
+	font-size:24px;
+	text-align:center;
+	margin:5px;
+}
+
+div.dice8side{
+	float:left;
+	width:125px;
+  height: 125px;
+  line-height: 125px;
+	background-image: url(images/8.png);
+	padding:10px;
+	font-size:24px;
+	text-align:center;
+	margin:5px;
+}
+
+div.dice12side{
+	float:left;
+	width:125px;
+  height: 125px;
+  line-height: 100px;
+	background-image: url(images/12.png);
+	padding:10px;
+	font-size:24px;
+	text-align:center;
+	margin:5px;
+}
+
+div.dice20side{
+	float:left;
+	width:125px;
+  height: 125px;
+  line-height: 100px;
+	background-image: url(images/20.png);
+	padding:10px;
+	font-size:24px;
+	text-align:center;
+	margin:5px;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+
+  <script src="js/script.js"></script>
+  <h1>BlackJack Dice Game</h1>
+  <p>Roll the Dice - Try Your Luck<br />
+    Same rules apply as blackjack, closest to 21 without busting wins!</p>
+  <hr />
+
+  <div class="row">
+    <div class="player col-sm-8">
+      <h3>Player</h3>
+      <p>Player gets 5 dice: 4 sided, 6 sided, 8 sided, 12 sided, and another 6 sided</p>
+      <div id="die1" class="dice4side">0</div>
+      <div id="die2" class="dice6side">0</div>
+      <div id="die3" class="dice8side">0</div>
+      <div id="die4" class="dice12side">0</div>
+      <div id="die5" class="dice6side">0</div>
+    </div>
+    <div class=" dealer col-sm-4">
+      <h3>Dealer</h3>
+      <p>Dealer gets 2 dice: 20 sided and 6 sided</p>
+      <div id="dieD1" class="dice20side">0</div>
+      <div id="dieD2" class="dice6side">0</div>
+    </div>
+  </div><!-- end row -->
+
+  <div class="row">
+    <button onclick="rollDice()">Roll Dice</button>
+  </div>
+  <div class="row">
+    <h2 id="status" style="clear:left;"></h2>
+  </div><!-- end row-->
+
+</div><!-- end container div -->
+</body>
+</html>
