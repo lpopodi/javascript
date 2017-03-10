@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <script src="js/script.js" type="text/javascript"></script>
+  <div class="row">
+    <img src="images/blackjack-or-die.png" />
+    <div class="headInfo">Roll the Dice - Try Your Luck<br />Same rules apply as blackjack, closest to 21 without busting wins!</div>
+  </div><!-- end row-->
+  <div class="row">
+    <div class="player col-sm-8">
+      <h3>Player 1 <button class="hitMe" onclick="p1Hit()">Hit Me</button></h3>
+      <p>Player gets 5 dice: 4 sided, 12 sided, 10 sided, 8 sided, and 6 sided</p>
+      <div id="P1die1" class="dice4side">0</div>
+      <div id="P1die2" class="dice12side">0</div>
+      <div id="P1die3" class="dice10side">0</div>
+      <div id="P1die4" class="dice8side">0</div>
+      <div id="P1die5" class="dice6side">0</div>
+        <h2 id="player1status" style="clear:left;"></h2>
+    <hr />
+      <h3>Player 2<button class="hitMe" onclick="p2Hit()">Hit Me</button></h3>
+      <p>Player gets 5 dice: 4 sided, 12 sided, 10 sided, 8 sided, and 6 sided</p>
+      <div id="P2die1" class="dice4side">0</div>
+      <div id="P2die2" class="dice12side">0</div>
+      <div id="P2die3" class="dice10side">0</div>
+      <div id="P2die4" class="dice8side">0</div>
+      <div id="P2die5" class="dice6side">0</div>
+      <h2 id="player2status" style="clear:left;"></h2>
+    <hr />
+      <h3>Player 3<button class="hitMe" onclick="p3Hit()">Hit Me</button></h3>
+      <p>Player gets 5 dice: 4 sided, 12 sided, 10 sided, 8 sided, and 6 sided</p>
+      <div id="P3die1" class="dice4side">0</div>
+      <div id="P3die2" class="dice12side">0</div>
+      <div id="P3die3" class="dice10side">0</div>
+      <div id="P3die4" class="dice8side">0</div>
+      <div id="P3die5" class="dice6side">0</div>
+      <h2 id="player3status" style="clear:left;"></h2>
+    </div><!-- end column 1 -->
+    <div class=" dealer col-sm-4">
+        <div class="startGame"><button class="rollDice" onclick="rollDice()">Start Game:<br />Roll the Dice</button></div>
+      <h3>Dealer<button class="hitMe" onclick="dealerHit()">Hit Me</button></h3>
+      <p>Dealer gets 2 dice: 20 sided and 6 sided</p>
+      <div id="dieD1" class="dice20side">0</div>
+      <div id="dieD2" class="dice6side">0</div>
+      <div id="dieD3" class="dice8side">0</div>
+      <div id="dieD4" class="dice6side">0</div>
+      <h2 id="dealerstatus" style="clear:left;"></h2>
+      <button class="allPlayersStay" onclick="allPlayersStay()">All Players Stay<br />Calculate Winner</button>
+    </div><!-- end column 2 -->
+  </div><!-- end row -->
+</div><!-- end container div -->
+</body>
+</html>

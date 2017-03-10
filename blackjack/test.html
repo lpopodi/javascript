@@ -8,11 +8,19 @@
 <div class="container">
 
   <script src="js/script.js" type="text/javascript"></script>
-  <h1>BlackJack or Die ???</h1>
-  <p>Roll the Dice - Try Your Luck<br />
-    Same rules apply as blackjack, closest to 21 without busting wins!</p>
-  <hr />
-
+  <div class="row">
+    <h1>BlackJack or Die ???</h1>
+    <hr />
+    Roll the Dice - Try Your Luck |     Same rules apply as blackjack, closest to 21 without busting wins!
+  </div><!-- end row-->
+  <div class="row">
+    <div class="col-sm-4">
+      <button class="rollDice" onclick="rollDice()">Roll Dice</button>
+    </div><!-- end column 1 -->
+    <div class="col-sm-8">
+      <h2 id="status"></h2>
+    </div><!-- end column 2 -->
+  </div>
   <div class="row">
     <div class="player col-sm-8">
       <h3>Player</h3>
@@ -22,6 +30,7 @@
       <div id="die3" class="dice8side">0</div>
       <div id="die4" class="dice10side">0</div>
       <div id="die5" class="dice12side">0</div>
+      <div><button class="hitMe" onclick="hitMe()">Hit Me</button></div>
     </div>
     <div class=" dealer col-sm-4">
       <h3>Dealer</h3>
@@ -30,13 +39,6 @@
       <div id="dieD2" class="dice6side">0</div>
     </div>
   </div><!-- end row -->
-
-  <div class="row">
-    <button onclick="rollDice()">Roll Dice</button>
-  </div>
-  <div class="row">
-    <h2 id="status" style="clear:left;"></h2>
-  </div><!-- end row-->
 
 </div><!-- end container div -->
 </body>
