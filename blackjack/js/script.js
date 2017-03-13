@@ -73,7 +73,7 @@ function rollDice(){
     var player2Total = p2d1 + p2d2 + p2d3;
     var player3Total = p3d1 + p3d2 + p3d3;
     var dealerTotal = dD1 + dD2;
-    player1status.innerHTML = "You rolled "+player1Total+".";
+    player1status.innerHTML = player1Total;
     player2status.innerHTML = "You rolled "+player2Total+".";
     player3status.innerHTML = "You rolled "+player3Total+".";
     dealerstatus.innerHTML = "Dealer rolled "+dealerTotal+".";
@@ -84,8 +84,8 @@ function p1Hit() {
     var P1die4 = document.getElementById("P1die4");
     var p1d4 = Math.floor(Math.random() * 8) + 1;
     P1die4.innerHTML = p1d4;
-    var player1Total = p1d1 + p1d2 + p1d3 + p1d4;
-    player1status.innerHTML = "New roll Total "+player1Total+".";
+    var p1HitTotal = player1Total + p1d4;
+    p1hitstatus.innerHTML = p1HitTotal;
 }
 
 function p2Hit() {
