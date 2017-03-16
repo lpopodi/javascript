@@ -10,10 +10,10 @@ function app(people){
       var name = searchByName(people);
       var person = findByName(people, name[0], name[1]);
       mainMenu(person, people);
-      displayPeople(people);
     break;
     case 'no':
       searchByTraits(people);
+      displayPeople(people);
     break;
     default:
     app(people); // restart app
@@ -30,18 +30,17 @@ function mainMenu(person, people){
     return app(people); // restart
   }
 
-  var displayOption = prompt("Found " + person.firstName + " " + person.lastName + " . Do you want to know their 'info', 'family', or 'descendants'? Type the option you want or 'restart' or 'quit'");
+  var displayOption = prompt("Found " + person[0].firstName + " " + person[0].lastName + " . Do you want to know their 'info', 'family', or 'descendants'? Type the option you want or 'restart' or 'quit'");
 
   switch(displayOption){
     case "info":
-    var personInfo = displayInfo(people, person, id, firstName, lastName, gender, dob, height, weight, eyeColor, occupation)
-    info(person, people);
+    var personInfo = displayInfo(person);
     break;
     case "family":
-    // TODO: get person's family
+    var personFamily = checkFamily(person);
     break;
     case "descendants":
-    // TODO: get person's descendants
+    var personDescendants = checkDescendents(person);
     break;
     case "restart":
     app(people); // restart
@@ -55,8 +54,8 @@ function mainMenu(person, people){
 
 // search by Name - grabbing the variables
 function searchByName(people){
-  var firstName = promptFor("What is the person's first name?", chars).toLowerCase();
-  var lastName = promptFor("What is the person's last name?", chars).toLowerCase();
+  var firstName = promptFor("What is the person's first name?", chars).toLowerCase().trim();
+  var lastName = promptFor("What is the person's last name?", chars).toLowerCase().trim();
    var result = [];
    result.push(firstName);
    result.push(lastName);
@@ -65,58 +64,57 @@ function searchByName(people){
 }
 
 // Find by name - actually checking the data
-var firstName;
-var lastName;
 function findByName(people, firstName, lastName){
-  var personResult = people.filter(filterByName);
-  console.log(personResult);
-  return personResult;
-}
-function filterByName(person){
-  return (person.firstName).toLowerCase() == firstName && (person.lastName).toLowerCase() == lastName;
+  var person = people.filter(function(personResult) {
+    return personResult.firstName.toLowerCase().trim() === firstName && personResult.lastName.toLowerCase().trim() === lastName});
+    return person;
 }
 
-
-function displayInfo(people, person, id, firstName, lastName, gender, dob, height, weight, eyeColor, occupation){
-  var personInfo = [];
-  personInfo.push(id);
-  personInfo.push(firstName);
-  personInfo.push(lastName);
-  personInfo.push(gender);
-  personInfo.push(dob);
-  personInfo.push(height);
-  personInfo.push(weight);
-  personInfo.push(eyeColor);
-  personInfo.push(occupation);
-  personInfo.push(parents);
-  personInfo.push(currentSpouse);
-  return personInfo;
+function displayInfo(person){
+var infoMessage = "";
+infoMessage += "First Name " + person[0].firstName + "/n";
+infoMessage += "Last Name " + person[0].lastName + "/n";
+infoMessage += "Gender " + person[0].gender + "/n";
+infoMessage += "Date of Birth " + person[0].dob + "/n";
+infoMessage += "Height " + person[0].height + "/n";
+infoMessage += "Weight " + person[0].weight + "/n";
+infoMessage += "Eye Color " + person[0].eyeColor + "/n";
+infoMessage += "Occupation " + person[0].occupation + "/n";
+infoMessage += "Person ID " + person[0].id + "/n";
+alert(infoMessage);
 }
 
-function info(person, people){
-  var personInfo = displayInfo(person, personInfo[0], personInfo[1], personInfo[2], personInfo[3], personInfo[4],personInfo[5], personInfo[6], personInfo[7], personInfo[8], personInfo[9], personInfo[10]);
-  return personInfo;
+// checking family
+  var familyMembers = [];
+function checkFamily(person){
+    for (var i = 0; i < people.length; i++) {
+    if (person[0].parents === person.id || person.currentSpouse === person[0].id) {
+      alert(familyMembers.tostring("\n"));
+      break;
+    }
+  }
 }
 
 
+//checking descendents
+function checkDescendents(person){
+  if (person.parents === person[0].id) {
+    return;
+  }
+}
 
 //search by Traits -- grabbing the variables
 function searchByTraits(people){
-  var gender = promptFor("What is the person's gender?", chars);
-  var dob = promptFor("What is the person's date of birth?", chars);
-  var height = promptFor("What is the person's height?", chars);
+  var gender = promptFor("What is the person's gender?", chars).toLowerCase().trim();
+  var dob = promptFor("What is the person's date of birth? Please enter as 3/25/2015", chars);
+  var height = promptFor("What is the person's height? Please enter in inches", chars);
   var weight = promptFor("What is the person's weight?", chars);
-  var eyeColor = promptFor("What is the person's eye color?", chars);
-  var occupation = promptFor("What is the person's occupation?", chars);
-  var traits = [];
-  traits.push(gender);
-  traits.push(dob);
-  traits.push(height);
-  traits.push(weight);
-  traits.push(eyeColor);
-  traits.push(occupation);
-  return traits;
+  var eyeColor = promptFor("What is the person's eye color?", chars).toLowerCase().trim();
+  var occupation = promptFor("What is the person's occupation?", chars).toLowerCase().trim();
+/*  for (i = 0; i < people.length; i++) {
+}*/
 }
+
 
 // Find by Traits - actually checking the data
 
@@ -143,22 +141,6 @@ function promptFor(question, valid){
     var response = prompt(question).trim();
   } while(!response || !valid(response));
   return response;
-}
-
-// checking family
-
-function checkFamily(people, parents, currentSpouse){
-  for (var i = 0; i < people.length; i++) {
-    if (people[9] == personInfo[0] || people[9] == personInfo[0]) {
-      break;
-    }
-  }
-}
-//checking descendents
-function checkDescendents(people, parents){
-  if (people.parents == person[0]) {
-    return;
-  }
 }
 
 // helper function to pass into promptFor to validate yes/no answers
