@@ -10,6 +10,7 @@ function app(people){
       var name = searchByName(people);
       var person = findByName(people, name[0], name[1]);
       mainMenu(person, people);
+      displayPeople(people);
     break;
     case 'no':
       searchByTraits(people);
@@ -65,14 +66,15 @@ function searchByName(people){
 }
 
 // Find by name - actually checking the data
+var firstName;
+var lastName;
 function findByName(people, firstName, lastName){
-  var personResult = people.filter(
-    function(person) {
-      return person.firstName === firstName && person.lastName === lastName;
-      }
-    );
+  var personResult = people.filter(filterByName);
   console.log(personResult);
   return personResult;
+}
+function filterByName(person){
+  return person.firstName.toLowerCase() === firstName && person.lastName.toLowerCase() === lastName;
 }
 
 
@@ -93,7 +95,7 @@ function displayInfo(people, person, id, firstName, lastName, gender, dob, heigh
 }
 
 function info(person, people){
-  var personInfo = displayInfo(person, personInfo[0], personInfo[1], personInfo[2], personInfo[3], personInfo[4],personInfo[5], personInfo[6], personInfo[7], personInfo[8]);
+  var personInfo = displayInfo(person, personInfo[0], personInfo[1], personInfo[2], personInfo[3], personInfo[4],personInfo[5], personInfo[6], personInfo[7], personInfo[8], personInfo[9], personInfo[10]);
   return personInfo;
 }
 
@@ -118,17 +120,7 @@ function searchByTraits(people){
 }
 
 // Find by Traits - actually checking the data
-/*function checkTraits(people) {
-  if gender !empty {
 
-  }
-  break;
-
-  if dob !empty {
-
-  }
-  break;
-}*/
 
 // alerts a list of people
 function displayPeople(people){
@@ -152,6 +144,22 @@ function promptFor(question, valid){
     var response = prompt(question).trim();
   } while(!response || !valid(response));
   return response;
+}
+
+// checking family
+
+function checkFamily(people, parents, currentSpouse){
+  for (var i = 0; i < people.length; i++) {
+    if (people[9] == personInfo[0] || people[9] == personInfo[0]) {
+      break;
+    }
+  }
+}
+//checking descendents
+function checkDescendents(people, parents){
+  if (people.parents == person[0]) {
+    return;
+  }
 }
 
 // helper function to pass into promptFor to validate yes/no answers
