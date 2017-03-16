@@ -23,9 +23,7 @@ function app(people){
 
 // Menu function to call once you find who you are looking for
 function mainMenu(person, people){
-  /* Here we pass in the entire person object that we found in our search, as well as the entire original dataset of people. We need people in order to find descendants and other information that the user may want. */
-
-
+  var person;
 
   if(!person){
     alert("Could not find that individual.");
@@ -36,7 +34,8 @@ function mainMenu(person, people){
 
   switch(displayOption){
     case "info":
-      info(person, people);
+    var personInfo = displayInfo(people, person, id, firstName, lastName, gender, dob, height, weight, eyeColor, occupation)
+    info(person, people);
     break;
     case "family":
     // TODO: get person's family
@@ -74,7 +73,7 @@ function findByName(people, firstName, lastName){
   return personResult;
 }
 function filterByName(person){
-  return person.firstName.toLowerCase() === firstName && person.lastName.toLowerCase() === lastName;
+  return (person.firstName).toLowerCase() == firstName && (person.lastName).toLowerCase() == lastName;
 }
 
 
