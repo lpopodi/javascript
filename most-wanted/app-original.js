@@ -30,7 +30,7 @@ function mainMenu(person, people){
     return app(people); // restart
   }
 
-    var displayOption = prompt("Found " + person[0].firstName + " " + person[0].lastName + " . Do you want to know their 'info', 'family', or 'descendants'? Type the option you want or 'restart' or 'quit'");
+  var displayOption = prompt("Found " + person[0].firstName + " " + person[0].lastName + " . Do you want to know their 'info', 'family', or 'descendants'? Type the option you want or 'restart' or 'quit'");
 
   switch(displayOption){
     case "info":
@@ -86,7 +86,7 @@ alert(infoMessage);
 
 // checking family
   var familyMembers = [];
-  function checkFamily(person){
+function checkFamily(person){
     for (var i = 0; i < people.length; i++) {
     if (person[0].parents === person.id || person.currentSpouse === person[0].id) {
       alert(familyMembers.tostring("\n"));
@@ -103,33 +103,21 @@ function checkDescendents(person){
   }
 }
 
-// Search by traits
-function searchCriteria(){
-  var userInput = [];
-   var inputGender = promptFor("What is the person's gender?", chars).toLowerCase().trim();
-  var inputDob = promptFor("What is the person's date of birth? Please enter as 3/25/2015", chars);
-  var inputHeight = promptFor("What is the person's height? Please enter in inches", chars);
-  var inputWeight = promptFor("What is the person's weight?", chars);
-  var inputEyeColor = promptFor("What is the person's eye color?", chars).toLowerCase().trim();
-  var inputOccupation = promptFor("What is the person's occupation?", chars).toLowerCase().trim();
-  userInput.push(inputGender);
-  userInput.push(inputDob);
-  userInput.push(inputHeight);
-  userInput.push(inputWeight);
-  userInput.push(inputEyeColor);
-  userInput.push(inputOccupation);
-  return userInput;
+//search by Traits -- grabbing the variables
+function searchByTraits(people){
+  var gender = promptFor("What is the person's gender?", chars).toLowerCase().trim();
+  var dob = promptFor("What is the person's date of birth? Please enter as 3/25/2015", chars);
+  var height = promptFor("What is the person's height? Please enter in inches", chars);
+  var weight = promptFor("What is the person's weight?", chars);
+  var eyeColor = promptFor("What is the person's eye color?", chars).toLowerCase().trim();
+  var occupation = promptFor("What is the person's occupation?", chars).toLowerCase().trim();
+/*  for (i = 0; i < people.length; i++) {
+}*/
 }
 
-// Check if criteria exists
-function searchElements(){
-  for (i = 0; i < userInput.length; i++) {
-    if (userInput[0].length !== 0) {
-      function checkGender(person)person.gender.toLowerCase().trim()
-    }
-}
 
-// HELPER FUNCTIONS -------------------------------------------------------
+// Find by Traits - actually checking the data
+
 
 // alerts a list of people
 function displayPeople(people){
@@ -146,8 +134,6 @@ function displayPerson(person){
   // TODO: finish getting the rest of the information to display
   alert(personInfo);
 }
-
-
 
 // function that prompts and validates user input
 function promptFor(question, valid){
