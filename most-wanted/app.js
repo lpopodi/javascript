@@ -72,15 +72,15 @@ function findByName(people, firstName, lastName){
 
 function displayInfo(person){
 var infoMessage = "";
-infoMessage += "First Name " + person[0].firstName + "/n";
-infoMessage += "Last Name " + person[0].lastName + "/n";
-infoMessage += "Gender " + person[0].gender + "/n";
-infoMessage += "Date of Birth " + person[0].dob + "/n";
-infoMessage += "Height " + person[0].height + "/n";
-infoMessage += "Weight " + person[0].weight + "/n";
-infoMessage += "Eye Color " + person[0].eyeColor + "/n";
-infoMessage += "Occupation " + person[0].occupation + "/n";
-infoMessage += "Person ID " + person[0].id + "/n";
+infoMessage += "First Name " + person[0].firstName + "\n";
+infoMessage += "Last Name " + person[0].lastName + "\n";
+infoMessage += "Gender " + person[0].gender + "\n";
+infoMessage += "Date of Birth " + person[0].dob + "\n";
+infoMessage += "Height " + person[0].height + "\n";
+infoMessage += "Weight " + person[0].weight + "\n";
+infoMessage += "Eye Color " + person[0].eyeColor + "\n";
+infoMessage += "Occupation " + person[0].occupation + "\n";
+infoMessage += "Person ID " + person[0].id + "\n";
 alert(infoMessage);
 }
 
@@ -122,12 +122,12 @@ function searchCriteria(){
 }
 
 // Check if criteria exists
-function searchElements(){
+/*function searchElements(){
   for (i = 0; i < userInput.length; i++) {
     if (userInput[0].length !== 0) {
       function checkGender(person)person.gender.toLowerCase().trim()
     }
-}
+}*/
 
 // HELPER FUNCTIONS -------------------------------------------------------
 
